@@ -2,10 +2,8 @@ services:
   - type: web
     name: growth-decision-engine-api
     runtime: python
-    buildCommand: pip install -r requirements.txt && pip install -e .
-    startCommand: uvicorn growth_decision_engine.api.main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt
+    startCommand: PYTHONPATH=src uvicorn growth_decision_engine.api.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
-      - key: PYTHONPATH
-        value: src
