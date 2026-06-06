@@ -1,0 +1,28 @@
+actions:
+  save_with_discount:
+    label: "Send 20% retention discount"
+    channel: "email"
+    priority: 1
+  save_with_concierge:
+    label: "Create concierge recovery task"
+    channel: "crm"
+    priority: 1
+  remind:
+    label: "Send personalized reminder"
+    channel: "email"
+    priority: 2
+  upsell:
+    label: "Offer premium bundle"
+    channel: "in_app"
+    priority: 3
+  nurture:
+    label: "Continue nurture sequence"
+    channel: "email"
+    priority: 4
+
+thresholds:
+  high_churn_probability: 0.72
+  medium_churn_probability: 0.45
+  high_customer_value: 5000
+  high_activity_sessions: 8
+

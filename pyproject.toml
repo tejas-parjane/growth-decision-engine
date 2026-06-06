@@ -1,0 +1,29 @@
+[project]
+name = "growth-decision-engine"
+version = "0.1.0"
+description = "Portfolio-ready ML decision engine that predicts churn and triggers growth actions."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.111.0",
+  "joblib>=1.3.0",
+  "numpy>=1.24.0",
+  "pandas>=2.0.0",
+  "pydantic>=2.6.0",
+  "pyyaml>=6.0.0",
+  "scikit-learn>=1.3.0",
+  "streamlit>=1.32.0",
+  "uvicorn>=0.29.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "ruff>=0.4.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
