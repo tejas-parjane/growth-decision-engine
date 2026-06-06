@@ -36,9 +36,28 @@ export default function Landing() {
   const [health, setHealth] = useState<string | null>(null);
 
   useEffect(() => {
-    getHealth()
-      .then((r) => setHealth(r.status))
-      .catch(() => setHealth("unreachable"));
+    let cancelled = false;
+
+    const tryHealth = (retries: number): void => {
+      if (cancelled || retries <= 0) {
+        if (!cancelled) setHealth("unreachable");
+        return;
+      }
+
+      getHealth()
+        .then((r) => {
+          if (!cancelled) setHealth(r.status);
+        })
+        .catch(() => {
+          if (!cancelled) {
+            const delay = Math.min(2000 * (9 - retries), 15000);
+            setTimeout(() => tryHealth(retries - 1), delay);
+          }
+        });
+    };
+
+    tryHealth(8);
+    return () => { cancelled = true; };
   }, []);
 
   return (
