@@ -2,8 +2,6 @@
 
 An end-to-end ML decision system for e-commerce retention. It predicts churn and converts the prediction into an executable next best action through a rules-based decision API.
 
-This is positioned as a portfolio project for AI/ML engineering roles: it includes data generation, feature engineering, model training, decision orchestration, an API, an operator UI, and tests.
-
 ## Why This Project Exists
 
 Dashboards show what happened. A decision engine decides what to do next.
