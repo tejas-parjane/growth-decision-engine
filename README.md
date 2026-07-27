@@ -1,5 +1,7 @@
 # Growth Decision Engine
 
+Built a Growth Decision Engine that predicts churn and automatically recommends retention or upsell actions through a FastAPI decisioning service.
+
 An end-to-end ML decision system for e-commerce retention. It predicts churn and converts the prediction into an executable next best action through a rules-based decision API.
 
 ## Why This Project Exists
@@ -123,21 +125,3 @@ The ML model estimates churn probability. The decision engine then combines that
 - Otherwise -> nurture sequence
 
 This separation is intentional: ML handles pattern detection, while business rules keep actions explainable and controllable.
-
-## Portfolio Positioning
-
-Use this wording:
-
-> Built a Growth Decision Engine that predicts churn and automatically recommends retention or upsell actions through a FastAPI decisioning service.
-
-Avoid reducing it to:
-
-> Built a churn prediction model.
-
-## Next Enhancements
-
-- Add MLflow experiment tracking and model registry metadata.
-- Persist decisions to PostgreSQL for auditability.
-- Add feedback events such as `offer_sent`, `clicked`, `converted`, and `retained`.
-- Add a batch scoring job for daily customer action queues.
-- Add an LLM explanation layer after the non-LLM system is stable.
